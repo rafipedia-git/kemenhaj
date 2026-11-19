@@ -26,7 +26,7 @@ window.SITE = {
     "vision": "https://haji.go.id/profil/visi-misi"
   },
   "hero": {
-    "title": "Langkah awal\nmenuju Baitullah.",
+    "title": "Langkah awal\nmenuju Baitullah.\nALRAFI GANTENG",
     "text": "Informasi yang jelas. Pelayanan yang dekat. Temukan panduan layanan haji untuk jamaah Kota Salatiga dalam satu tempat."
   },
   "services": [
