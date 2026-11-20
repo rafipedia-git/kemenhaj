@@ -26,7 +26,7 @@ window.SITE = {
     "vision": "https://haji.go.id/profil/visi-misi"
   },
   "hero": {
-    "title": "Langkah awal\nmenuju Baitullah.\nALRAFI GANTENG",
+    "title": "Langkah awal\nmenuju Baitullah.",
     "text": "Informasi yang jelas. Pelayanan yang dekat. Temukan panduan layanan haji untuk jamaah Kota Salatiga dalam satu tempat."
   },
   "services": [
@@ -37,9 +37,9 @@ window.SITE = {
       "summary": "Mulai perjalanan ibadah dengan memahami persyaratan dan alur pendaftaran.",
       "intro": "Siapkan dokumen, pahami tahapan, dan lakukan verifikasi melalui petugas pelayanan haji.",
       "documents": [
-        "Salinan KTP sesuai domisili atau Kartu Identitas Anak (KIA) 2 Lembar",
-        "Salinan Kartu Keluarga (KK). Pastikan data diri sesuai dengan dokumen identitas 2 Lembar",
-        "Salinan akta kelahiran/surat kenal lahir/atau Kartu Indonesia Anak (KIA)  2 Lembar. Siapkan salah satu dokumen dalam kelompok ini."
+        "Salinan KTP sesuai domisili atau Kartu Identitas Anak (KIA) (2 Lembar)",
+        "Salinan Kartu Keluarga (KK). Pastikan data diri sesuai dengan dokumen identitas (2 Lembar)",
+        "Salinan akta kelahiran/surat kenal lahir/atau Kartu Indonesia Anak (KIA)  (2 Lembar)."
       ],
       "steps": [
         "Siapkan salinan dokumen kependudukan sesuai domisili.",
