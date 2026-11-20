@@ -37,9 +37,9 @@ window.SITE = {
       "summary": "Mulai perjalanan ibadah dengan memahami persyaratan dan alur pendaftaran.",
       "intro": "Siapkan dokumen, pahami tahapan, dan lakukan verifikasi melalui petugas pelayanan haji.",
       "documents": [
-        "Salinan KTP sesuai domisili atau Kartu Identitas Anak (KIA).",
-        "Salinan Kartu Keluarga (KK). Pastikan data diri sesuai dengan dokumen identitas.",
-        "Salinan akta kelahiran, surat kenal lahir, atau Kartu Indonesia Anak (KIA). Siapkan salah satu dokumen dalam kelompok ini."
+        "Salinan KTP sesuai domisili atau Kartu Identitas Anak (KIA) 2 Lembar",
+        "Salinan Kartu Keluarga (KK). Pastikan data diri sesuai dengan dokumen identitas 2 Lembar",
+        "Salinan akta kelahiran/surat kenal lahir/atau Kartu Indonesia Anak (KIA)  2 Lembar. Siapkan salah satu dokumen dalam kelompok ini."
       ],
       "steps": [
         "Siapkan salinan dokumen kependudukan sesuai domisili.",
@@ -65,7 +65,7 @@ window.SITE = {
           "Jika pernah berhaji, berlaku jeda paling singkat 18 tahun sejak haji terakhir. Pengecualian berlaku bagi jemaah haji reguler yang telah bertugas sebagai Panitia Penyelenggara Ibadah Haji (PPIH) atau petugas penyelenggara ibadah haji khusus."
         ]
       },
-      "basis": "PMHU Nomor 3 Tahun 2025 sebagaimana diubah dengan PMHU Nomor 6 Tahun 2026, Pasal 2; panduan Simulasi Pendaftaran Haji Reguler Salatiga."
+      
     },
     {
       "id": "pembatalan",
@@ -113,7 +113,7 @@ window.SITE = {
           ]
         }
       ],
-      "basis": "PMHU Nomor 3 Tahun 2025, Pasal 14–19; perubahan Pasal 16 dalam PMHU Nomor 6 Tahun 2026."
+      
     },
     {
       "id": "pelimpahan",
@@ -167,7 +167,7 @@ window.SITE = {
           ]
         }
       ],
-      "basis": "PMHU Nomor 6 Tahun 2026, perubahan Pasal 27; PMHU Nomor 3 Tahun 2025, Pasal 28–29."
+      
     },
     {
       "id": "mutasi",
@@ -207,7 +207,7 @@ window.SITE = {
           ]
         }
       ],
-      "basis": "PMHU Nomor 3 Tahun 2025, Pasal 64 (mutasi embarkasi); perubahan data mengikuti Pasal 10 sebagaimana diubah dengan PMHU Nomor 6 Tahun 2026."
+      
     }
   ],
   "vision": "Pelayanan haji dan umrah yang profesional, terbuka, akuntabel, berorientasi pada jamaah, memperhatikan kesehatan, dan selaras dengan tuntunan syariat.",
