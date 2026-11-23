@@ -6,6 +6,8 @@
   const nav = [['beranda','Beranda','index.html'],['tugas','Tugas dan Fungsi','tugas-dan-fungsi.html'],['visi','Visi Misi','visi-misi.html'],['sejarah','Sejarah','sejarah.html'],['kontak','Kontak','kontak.html']];
   const e = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const paths = {
+    tiktok: '<path d="M14 3h3a5 5 0 0 0 4 4v3a8 8 0 0 1-4-1.3V16a6 6 0 1 1-6-6v3a3 3 0 1 0 3 3V3Z"/>',
+    youtube: '<rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none"/>',
     document:'<path d="M14 2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9z"/><path d="M14 2v7h7M7 13h10M7 17h7"/>',
     cancel:'<circle cx="12" cy="12" r="9"/><path d="m9 9 6 6m0-6-6 6"/>',
     users:'<circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6m2 4a6 6 0 0 1 3 5v2"/>',
@@ -26,12 +28,44 @@
   const brand = () => `<a class="brand" href="index.html"><img src="assets/logo-kemenhaj.png" alt="Logo Kementerian Haji dan Umrah" width="60" height="60"><div><strong>${e(S.name)}</strong><span>${e(S.city)}</span></div></a>`;
   const hours = () => S.hours.map(([day,time])=>`<div class="hour-row"><span>${e(day)}</span><b>${e(time)}</b></div>`).join('');
   const menu = () => nav.map(([id,label,url])=>`<a href="${url}"${page===id?' class="active" aria-current="page"':''}>${label}</a>`).join('');
-  const contactLinks = () => `<div class="social-links" aria-label="Kanal kontak resmi">
-    <a href="${e(S.contact.instagram)}" target="_blank" rel="noopener" aria-label="Instagram Kemenhaj Salatiga">${icon('instagram')}<span>Instagram</span></a>
-    <a href="https://wa.me/${e(S.contact.whatsapp)}" target="_blank" rel="noopener" aria-label="WhatsApp Kemenhaj Salatiga">${icon('whatsapp')}<span>WhatsApp</span></a>
-    <a href="mailto:${e(S.contact.email)}" aria-label="Email Kemenhaj Salatiga">${icon('mail')}<span>Email</span></a>
-    <a href="${e(S.contact.mapsUrl)}" target="_blank" rel="noopener" aria-label="Lokasi kantor di Google Maps">${icon('pin')}<span>Lokasi</span></a>
-  </div>`;
+  const contactLinks = () => `
+    <div class="social-links" aria-label="Kanal kontak resmi">
+      <a href="${e(S.contact.instagram)}"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Instagram Kemenhaj Salatiga">
+        ${icon('instagram')}<span>Instagram</span>
+      </a>
+
+      <a href="${e(S.contact.tiktok)}"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="TikTok Kemenhaj Salatiga">
+        ${icon('tiktok')}<span>TikTok</span>
+      </a>
+
+      <a href="${e(S.contact.youtube)}"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="YouTube Kemenhaj Salatiga">
+        ${icon('youtube')}<span>YouTube</span>
+      </a>
+
+      <a href="https://wa.me/${e(S.contact.whatsapp)}"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="WhatsApp Kemenhaj Salatiga">
+        ${icon('whatsapp')}<span>WhatsApp</span>
+      </a>
+
+      <a href="mailto:${e(S.contact.email)}"
+         aria-label="Email Kemenhaj Salatiga">
+        ${icon('mail')}<span>Email</span>
+      </a>
+
+      <a href="${e(S.contact.mapsUrl)}"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Lokasi kantor di Google Maps">
+        ${icon('pin')}<span>Lokasi</span>
+      </a>
+    </div>
+  `;
   document.getElementById('site-header').innerHTML = `<header class="header"><div class="wrap header-inner">${brand()}<button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button><nav class="nav" id="main-nav" aria-label="Navigasi utama">${menu()}</nav></div></header>`;
   document.getElementById('site-footer').innerHTML = `<footer class="footer"><div class="wrap"><div class="footer-grid"><div>${brand()}<p>Mendampingi langkah jamaah dengan informasi yang jelas dan pelayanan yang lebih mudah dijangkau.</p>${contactLinks()}</div><div><h3>Jelajahi</h3><div class="footer-links">${nav.map(([,label,url])=>`<a href="${url}">${label}</a>`).join('')}</div></div><div><h3>Jam pelayanan</h3><p>Senin–Kamis: 07.30–16.00 WIB<br>Jumat: 07.30–16.30 WIB</p><p>Jadwal dapat menyesuaikan hari libur.</p></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} ${e(S.name)} ${e(S.city)}</span></div></div></footer>`;
   const intro = (title,description) => `<div class="wrap"><div class="breadcrumbs"><a href="index.html">Beranda</a><span>/</span>${e(title)}</div><div class="page-intro"><h1>${e(title)}</h1><p>${e(description)}</p></div>`;
@@ -46,7 +80,96 @@
 Nomenklatur urusan haji awalnya berada di Departemen Dalam Negeri (sekarang Kementerian Dalam Negeri) pada tahun 1945. Kemudian urusan haji dan masjid berpindah ke Departemen Agama pada 1946.Nomenklatur Urusan Haji ini kemudian ditingkatkan menjadi Departemen Urusan Haji pada tahun 1965 pada perombakan Kabinet Dwikora I, yang dipimpin oleh Menteri Urusan Haji. Departemen yang dibentuk ini berada di bawah Kementerian Koordinator Kompartimen Agama. Departemen ini hanya bertahan sampai 25 Juli 1966 ketika pembubaran Kabinet Dwikora III.
 
 Dalam kurung waktu dari 1966 hingga 2024, nomenklatur haji kembali menjadi direktorat jenderal dari Kementerian Agama. Pada tahun 1979, urusan haji digabung bersama Direktorat Jenderal Bimbingan Masyarakat Islam. Nomenklatur umrah pun ditambahkan pada tahun 2006 seusai kebutuhan masyarakat, dan nomenklatur haji dipisahkan kembali dari nomenklatur bimbingan masyarakat Islam, sehingga menjadi Direktorat Jenderal Penyelenggaraan Haji dan Umrah. Kemudian pada pemerintahan Presiden ke-8 Indonesia Prabowo Subianto, dibentuklah badan khusus untuk mengatur urusan haji, sebagian besar tugas dan fungsinya dialihkan dari Direktorat Jenderal Penyelenggaraan Haji dan Umrah. Kemudian, fungsi direktorat jenderal tersebut sepenuhnya dialihkan setelah terbentuk Kementerian Haji dan Umrah pada September 2025.Pelayanan haji di Kota Salatiga hadir untuk membantu masyarakat mempersiapkan perjalanan ibadah. Portal digital ini dirancang untuk melengkapi layanan tatap muka dengan informasi yang dapat dipelajari dari rumah.</p></section><div class="history"><article><h3>Pelayanan kepada masyarakat</h3><p>Pendampingan administrasi dan informasi menjadi bagian penting dalam persiapan ibadah jamaah.</p></article><article><h3>Penguatan layanan kelembagaan</h3><p>Bagian ini disiapkan untuk memuat pembentukan kantor, perubahan organisasi, dan dokumen penetapan setelah diverifikasi.</p></article><article><h3>Pengembangan akses digital</h3><p>Rancangan portal menyatukan panduan pendaftaran, pembatalan, pelimpahan porsi, mutasi, dan informasi kunjungan dalam satu akses.</p></article></div></div></div>`}
-  function contact(){const c=S.contact;return intro('Kontak','Kami siap membantu kebutuhan informasi dan pelayanan Anda.')+`<div class="page-content"><div class="contact-grid"><section class="panel"><div class="eyebrow">Kantor layanan</div><h2>${e(S.name)}<br>${e(S.city)}</h2><div class="contact-details"><a class="contact-line" href="${e(c.mapsUrl)}" target="_blank" rel="noopener">${icon('pin')}<div><b>Lokasi kantor</b><span>Lihat lokasi kantor di Google Maps</span></div></a><a class="contact-line" href="https://wa.me/${e(c.whatsapp)}" target="_blank" rel="noopener">${icon('whatsapp')}<div><b>WhatsApp</b><span>0851-6818-5205</span></div></a><a class="contact-line" href="mailto:${e(c.email)}">${icon('mail')}<div><b>Email</b><span>${e(c.email)}</span></div></a><a class="contact-line" href="${e(c.instagram)}" target="_blank" rel="noopener">${icon('instagram')}<div><b>Instagram</b><span>@kemenhaj.salatiga</span></div></a></div></section>${schedule(true)}</div><section class="source-area"><h3>Persiapan sebelum berkunjung</h3><p>Pelajari panduan layanan dan siapkan berkas sesuai kebutuhan Anda. Ketentuan rinci dan kelengkapan akhir dikonfirmasi kepada petugas.</p><a href="index.html#layanan" class="btn btn-dark">Lihat panduan layanan</a></section></div></div>`}
+   function contact() {
+    const c = S.contact;
+
+    return intro(
+      'Kontak',
+      'Kami siap membantu kebutuhan informasi dan pelayanan Anda.'
+    ) + `
+      <div class="page-content">
+        <div class="contact-grid">
+          <section class="panel">
+            <div class="eyebrow">Kantor layanan</div>
+            <h2>${e(S.name)}<br>${e(S.city)}</h2>
+
+            <div class="contact-details">
+              <a class="contact-line"
+                 href="${e(c.mapsUrl)}"
+                 target="_blank" rel="noopener noreferrer">
+                ${icon('pin')}
+                <div>
+                  <b>Lokasi kantor</b>
+                  <span>Lihat lokasi kantor di Google Maps</span>
+                </div>
+              </a>
+
+              <a class="contact-line"
+                 href="https://wa.me/${e(c.whatsapp)}"
+                 target="_blank" rel="noopener noreferrer">
+                ${icon('whatsapp')}
+                <div>
+                  <b>WhatsApp</b>
+                  <span>0851-6818-5205</span>
+                </div>
+              </a>
+
+              <a class="contact-line" href="mailto:${e(c.email)}">
+                ${icon('mail')}
+                <div>
+                  <b>Email</b>
+                  <span>${e(c.email)}</span>
+                </div>
+              </a>
+
+              <a class="contact-line"
+                 href="${e(c.instagram)}"
+                 target="_blank" rel="noopener noreferrer">
+                ${icon('instagram')}
+                <div>
+                  <b>Instagram</b>
+                  <span>@kemenhaj.salatiga</span>
+                </div>
+              </a>
+
+              <a class="contact-line"
+                 href="${e(c.tiktok)}"
+                 target="_blank" rel="noopener noreferrer">
+                ${icon('tiktok')}
+                <div>
+                  <b>TikTok</b>
+                  <span>@kemenhaj_kotasala</span>
+                </div>
+              </a>
+
+              <a class="contact-line"
+                 href="${e(c.youtube)}"
+                 target="_blank" rel="noopener noreferrer">
+                ${icon('youtube')}
+                <div>
+                  <b>YouTube</b>
+                  <span>@KemenhajKotaSalatiga</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          ${schedule(true)}
+        </div>
+
+        <section class="source-area">
+          <h3>Persiapan sebelum berkunjung</h3>
+          <p>
+            Pelajari panduan layanan dan siapkan berkas sesuai kebutuhan Anda.
+            Ketentuan rinci dan kelengkapan akhir dikonfirmasi kepada petugas.
+          </p>
+          <a href="index.html#layanan" class="btn btn-dark">
+            Lihat panduan layanan
+          </a>
+        </section>
+      </div>
+    </div>`;
+  }
   const render = {beranda:home,visi:vision,tugas:duties,sejarah:history,kontak:contact};
   document.getElementById('main').innerHTML=(render[page]||home)();
   const toggle=document.querySelector('.menu-toggle'), menuEl=document.querySelector('.nav');

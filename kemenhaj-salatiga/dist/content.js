@@ -8,7 +8,9 @@ window.SITE = {
     "whatsapp": "6285168185205",
     "email": "salatigakota@haji.go.id",
     "mapsUrl": "https://maps.app.goo.gl/e9GXx734rjaRFsGU8",
-    "instagram": "https://www.instagram.com/kemenhaj.salatiga?rpxt=zwjkbw1qampmcnfp"
+    "instagram": "https://www.instagram.com/kemenhaj.salatiga?rpxt=zwjkbw1qampmcnfp",
+    "tiktok": "https://www.tiktok.com/@kemenhaj_kotasala?is_from_webapp=1&sender_device=pc",
+    "youtube": "https://www.youtube.com/@KemenhajKotaSalatiga"
   },
   "hours": [
     [
@@ -70,7 +72,7 @@ window.SITE = {
     {
       "id": "pembatalan",
       "icon": "cancel",
-      "title": "Pembatalan Haji",
+      "title": "Pembatalan Setoran Awal dan setoran Lunas",
       "summary": "Panduan permohonan pembatalan dan proses pengembalian setoran.",
       "intro": "Pilih jalur pengurusan yang sesuai dengan kondisi jamaah: atas permintaan sendiri atau melalui ahli waris untuk jamaah yang wafat.",
       "documents": [
@@ -107,9 +109,10 @@ window.SITE = {
           "title": "Untuk jamaah meninggal dunia",
           "items": [
             "Fotokopi dokumen identitas dan Kartu Keluarga ahli waris.",
-            "Fotokopi rekening ahli waris.",
+            "Fotokopi rekening ahli waris harus sama dengan rekening jamaah meninggal dunia.",
             "Fotokopi akta kematian atau surat keterangan kematian dari instansi yang berwenang.",
-            "Surat keterangan ahli waris dan kuasa waris."
+            "Surat keterangan ahli waris dan kuasa waris.",
+            "Surat pernyataan pembatalan yang diketahui lurah."
           ]
         }
       ],
